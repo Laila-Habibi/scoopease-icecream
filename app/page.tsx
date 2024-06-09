@@ -16,7 +16,7 @@ const Home:React.FC = () => {
 
   return (
    
-    <div className="flex flex-col  sm:mx-16 mx-4 py-4 ">
+    <div className="flex flex-col sm:mx-16 mx-2 py-4 ">
        <Head/>
        <About/>
        <Falvours iceCreamData={iceCreamData}/>

@@ -19,7 +19,7 @@ const IceCreamCard: React.FC<IceCreamProps> = ({image, name, rating, price}) => 
                         <img src={image} className='md:h-[250px] w-[250px] h-[150px] rounded-lg  hover:p-1' alt='image'/>
                         </div>
                         <div className='flex flex-row justify-between pr-2'>
-                           <div className='font-semibold hover:text-rose-500 hover:cursor-pointer'>
+                           <div className='sm:font-semibold font-md  hover:text-rose-500 hover:cursor-pointer'>
                                {name}
                            </div>
                            <div className='hover:text-rose-500 hover:cursor-pointer'>
@@ -27,7 +27,7 @@ const IceCreamCard: React.FC<IceCreamProps> = ({image, name, rating, price}) => 
                            </div>
                         </div>
                         <div className='flex flex-row justify-between'>
-                        <div className='font-bold text-lg hover:text-rose-500 hover:cursor-pointer'>
+                        <div className='sm:font-bold font-md sm:text-lg text-md hover:text-rose-500 hover:cursor-pointer'>
                             ${price}
                         </div>
                         <div className='pr-2'>

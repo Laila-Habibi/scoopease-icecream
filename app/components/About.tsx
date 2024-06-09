@@ -19,7 +19,7 @@ const About = () => {
   </div>
   <div className='md:w-1/2 w-full p-4 flex flex-col space-y-6 my-auto'>
     <div className='flex flex-row'> 
-    <h1 className='font-bold text-3xl mb-2'>Effortless Perfection Every Single Time
+    <h1 className='font-bold md:text-3xl text-2xl mb-2'>Effortless Perfection Every Single Time
       
       </h1>
     <span> <Image src={'/images/19.png'} height={100} width={100} alt='image' /></span></div>
