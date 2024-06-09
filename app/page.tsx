@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import Head from "./components/Head";
-import CircularImageWithBorderText from "./components/circularText";
+
 import About from "./components/About";
 import IceCreamCard from "./components/IceCreamCard";
 import Falvours from "./components/Falvours";
