@@ -71,6 +71,90 @@
       @apply border-border;
     }
     body {
-      @apply bg-background text-foreground;
+      @apply text-foreground;
+      background: #fffaf3;
+      color: #34261f;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
+  }
+
+  @layer utilities {
+    .soft-shadow { box-shadow: 0 24px 70px rgba(111, 70, 48, .12); }
+    .text-balance { text-wrap: balance; }
+
+    .animate-rise {
+      animation: rise-in .75s cubic-bezier(.22, 1, .36, 1) both;
+    }
+    .animate-rise-delay-1 {
+      animation: rise-in .75s .12s cubic-bezier(.22, 1, .36, 1) both;
+    }
+    .animate-rise-delay-2 {
+      animation: rise-in .75s .24s cubic-bezier(.22, 1, .36, 1) both;
+    }
+    .animate-scale-in {
+      animation: scale-in .9s .12s cubic-bezier(.22, 1, .36, 1) both;
+    }
+    .animate-float {
+      animation: float 4.5s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+      animation: float 4.5s 1.1s ease-in-out infinite;
+    }
+    .animate-wiggle {
+      animation: wiggle 5s ease-in-out infinite;
+      transform-origin: 50% 90%;
+    }
+    .section-reveal {
+      animation: section-reveal 1s cubic-bezier(.22, 1, .36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 8% cover 30%;
+    }
+    .card-reveal {
+      animation: card-reveal .75s cubic-bezier(.22, 1, .36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 25%;
+    }
+  }
+
+  @keyframes rise-in {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(.92) rotate(-2deg); }
+    to { opacity: 1; transform: scale(1) rotate(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+
+  @keyframes wiggle {
+    0%, 90%, 100% { transform: rotate(0); }
+    93% { transform: rotate(-7deg); }
+    96% { transform: rotate(7deg); }
+  }
+
+  @keyframes section-reveal {
+    from { opacity: 0; transform: translateY(45px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes card-reveal {
+    from { opacity: 0; transform: translateY(35px) scale(.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      animation-delay: 0ms !important;
+      scroll-behavior: auto !important;
     }
   }

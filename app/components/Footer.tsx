@@ -1,42 +1,13 @@
-import React from 'react'
-
-const Footer = () => {
-  return (
-    <footer className="bg-yellow-200 text-white py-12">
-    <div className="container mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-6 md:mb-0">
-          <h3 className="text-xl font-bold mb-4 text-gray-600">Scoopease</h3>
-          <p className="text-gray-400">© 2024 All rights reserved.</p>
-        </div>
-        <div className="flex space-x-6">
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-white transition-colors duration-300"
-          >
-          About us
-          </a>
-          <a
-            href="https://github.com/Laila-Habibi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-white transition-colors duration-300"
-          >
-           Contact us
-          </a>
-          <a
-            href="mailto:habibi.laila2000@gmail.com"
-            className="text-gray-600 hover:text-white transition-colors duration-300"
-          >
-          Testimonials
-          </a>
-        </div>
+const Footer = () => (
+  <footer className="bg-[#34261f] px-5 py-12 text-white sm:px-8">
+    <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 md:flex-row">
+      <div><h3 className="mb-2 text-2xl font-bold">Scoopease</h3><p className="text-sm text-white/50">© 2026 Scoopease. Happiness by the scoop.</p></div>
+      <div className="flex gap-6 text-sm text-white/60">
+        <a href="/our-story" className="transition hover:text-[#f6c957]">Our story</a>
+        <a href="/flavours" className="transition hover:text-[#f6c957]">Flavours</a>
+        <a href="/reviews" className="transition hover:text-[#f6c957]">Reviews</a>
       </div>
     </div>
   </footer>
-  )
-}
-
-export default Footer
+);
+export default Footer;

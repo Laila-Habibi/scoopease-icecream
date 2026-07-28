@@ -1,40 +1,13 @@
-import React from 'react'
-import Testimonial from './Testimonial'
-import { iceCreamReviews } from './Review'
-import { Button } from '@/components/ui/button'
+import Testimonial from './Testimonial';
 
-
-interface TestimonialsProps{
-  iceCreamReviews: any
-}
-
-const Testimonials: React.FC<TestimonialsProps> = ({iceCreamReviews}) => {
-  return (
-    <div className='flex flex-col w-full px-4 my-8'>
-      <div className='flex flex-row justify-between p-4'>
-        <div className='flex flex-row'>
-          <div>
-          <h1 className='font-bold md:text-3xl text-2xl'>Happier Test Buds! </h1>
-          </div>
-          <div>
-            
-           <img src='/images/ball4.png' className='md:h-[50px] md:w-[50px] h-0 w-0'/>
-          </div>
-         </div>
-        <Button className='bg-pink-400 md:px-8 px-2 py-2 font-semibold md:text-sm text-xs rounded-full text-white hover:bg-pink-600 hover:text-white'>See All</Button>
+const Testimonials = ({iceCreamReviews}: {iceCreamReviews: any[]}) => (
+  <section id="reviews" className="bg-[#f8dadd] px-5 py-20 sm:px-8 lg:py-28">
+    <div className="mx-auto max-w-7xl">
+      <div className="section-reveal mb-10 text-center"><p className="mb-2 text-sm font-bold uppercase tracking-[.18em] text-[#b64e5d]">The word on the street</p><h2 className="text-4xl font-semibold tracking-[-.03em] sm:text-5xl">Happy taste buds</h2></div>
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {iceCreamReviews.slice(0,4).map((person, index) => <Testimonial key={index} {...person}/>)}
       </div>
-    <div className='grid lg:grid-cols-4 md:grid-cols-3  gap-4 p-4'>
-     {iceCreamReviews.map((person: any, index: any) => (
-      <Testimonial
-      key={index}
-      image = {person.image}
-      name= {person.name}
-      comment={person.comment}
-      />
-     ))}
     </div>
-    </div>
-  )
-}
-
-export default Testimonials
+  </section>
+);
+export default Testimonials;

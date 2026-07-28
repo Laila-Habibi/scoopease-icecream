@@ -1,20 +1,13 @@
-import React from 'react'
-import Image from 'next/image'
-import { IceCreamReview, iceCreamReviews } from './Review'
+import { IceCreamReview } from './Review';
 
-const Testimonial:React.FC<IceCreamReview> = ({name, comment, image}) => {
-  return (
-    <div className='flex flex-row text-center gap-4'>
-      <div className='image'>
-        <img src= {image} alt='image' className='md:rounded-full md:h-36 md:w-36 rounded h-24 w-24'/>
-        {/* <Image src={image} height={100} width={100} alt='image' className='rounded-full'/> */}
-      </div>
-      <div className='text flex flex-col justify-center text-start'>
-         <p className='font-semibold hover:text-pink-500'>{name}</p>
-         <p className='text-gray-700 text-sm'>{comment}</p>
-      </div>
+const Testimonial: React.FC<IceCreamReview> = ({name, comment, image}) => (
+  <article className="card-reveal rounded-[1.5rem] bg-white p-6 transition duration-300 hover:-translate-y-2 hover:rotate-[-.5deg] soft-shadow">
+    <div className="mb-5 tracking-wider text-[#e9a536]">★★★★★</div>
+    <p className="min-h-12 text-base leading-6 text-[#594941]">&ldquo;{comment}&rdquo;</p>
+    <div className="mt-6 flex items-center gap-3">
+      <img src={image} alt={name} className="h-11 w-11 rounded-full object-cover"/>
+      <div><p className="font-bold">{name}</p><p className="text-xs text-[#9a8578]">Verified customer</p></div>
     </div>
-  )
-}
-
-export default Testimonial
+  </article>
+);
+export default Testimonial;
